@@ -1,6 +1,6 @@
 # SpotsToCylinder — User Guide
 
-**Script:** `SpotsToCylinder.m`  
+**Script:** SpotsToCylinder.m  
 **Author:** Dr Ellie Cho, Biological Optical Microscopy Platform (BOMP), The University of Melbourne  
 **Contact:** ellie.cho@unimelb.edu.au | bomp-enquiries@unimelb.edu.au  
 **Version:** 1.0 — March 2026 | Tested in Imaris 10.2
@@ -10,9 +10,10 @@
 These scripts are described in full in the following manuscript, currently under preparation:
  
 > Trang EP, Cho E, Wise A, Segal-Wasserman G, Fallon JB. *A detailed protocol for three-dimensional analysis of a chronically implanted and stimulated cochlea.* **Manuscript in preparation.**
- 
+
 A formal citation and DOI will be added here upon publication.
----
+
+
 
 ## Overview
 
@@ -20,9 +21,9 @@ This script generates a new image channel in Imaris where each spot is represent
 
 Cylinder dimensions (diameter and thickness) can either be set uniformly for all spots, or specified individually per spot via a CSV file. This makes the script suitable both for generic use and for applications requiring anatomically specific geometries, such as cochlear electrode array reconstruction.
 
-**Example use case:** Reconstruction of cochlear implant electrodes. Each spot is placed at the manually identified centre of an electrode contact, and a cylinder of the corresponding electrode diameter and thickness is generated around it.
+**Example use case:** Reconstruction of cochlear implant electrodes. Each spot is placed at the manually identified centre of an electrode contact, and a cylinder (yellow) of the corresponding electrode diameter and thickness is generated around it.
+![Reconstruction of cochlear implant electrodes](Images/Screengrabs_for_Instruction/SpotsToCylinder_8_Recontructed.png)
 
----
 
 ## Prerequisites
 
@@ -30,7 +31,7 @@ Cylinder dimensions (diameter and thickness) can either be set uniformly for all
 - If using per-spot parameters: a correctly formatted **CSV file** (see [CSV format](#csv-format))
 - Adequate RAM for your dataset size
 
----
+
 
 ## Installation
 
@@ -39,7 +40,7 @@ Cylinder dimensions (diameter and thickness) can either be set uniformly for all
 
 The script will appear under: **Spots → XT Tab → Create Cylinders from Spots**
 
----
+
 
 ## Workflow
 
@@ -51,19 +52,14 @@ Spots do not need to be placed in any particular spatial order, but note that th
 
 > **Minimum:** 2 spots are required.
 
----
 
 ### Step 2: Select the spots object
 
 Select the spots object in the Imaris scene before running the script. If no spots object is selected, the script will automatically use the first spots object found in the scene.
 
----
-
 ### Step 3: Run the script
 
 Navigate to **Spots → XT Tab → Create Cylinders from Spots**.
-
----
 
 ### Step 4: Cylinder parameters dialog
 
@@ -77,7 +73,6 @@ Navigate to **Spots → XT Tab → Create Cylinders from Spots**.
 | **Various (load CSV)** | Each spot has a different diameter and/or thickness |
 
 
----
 
 #### Option A: Identical for all spots
 
