@@ -89,7 +89,7 @@ Navigate to **Spots → XT Tab → Create Cylinders from Spots**.
 
 **Example images**
 
-![Dialog box showing the diameter and thickness input fields with default values](Images/Screengrabs for Instruction/SpotsToCylinder_1_Dialog1.PNG)
+![Dialog box showing the diameter and thickness input fields with default values](Images/Screengrabs_for_Instruction/SpotsToCylinder_1_Dialog1.PNG)
 
 ---
 
