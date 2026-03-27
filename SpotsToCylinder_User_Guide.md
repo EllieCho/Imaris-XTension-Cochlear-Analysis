@@ -69,17 +69,21 @@ Navigate to **Spots → XT Tab → Create Cylinders from Spots**.
 
 **Dialog: "Are the cylinder diameter and thickness identical for all spots?"**
 
+![Dialog box checking cylinder diameter and thickness identicality](Images/Screengrabs_for_Instruction/SpotsToCylinder_1_Dialog1.PNG)
+
 | Option | When to use |
 |---|---|
 | **Identical for all** | All spots should have the same cylinder dimensions |
 | **Various (load CSV)** | Each spot has a different diameter and/or thickness |
 
-![Dialog box checking cylinder diameter and thickness identicality](Images/Screengrabs_for_Instruction/SpotsToCylinder_1_Dialog1.PNG)
+
 ---
 
 #### Option A: Identical for all spots
 
 **Dialog: Cylinder Parameters**
+
+![Dialog box showing the diameter and thickness input fields with default values](Images/Screengrabs_for_Instruction/SpotsToCylinder_2_Dialog2.PNG)
 
 | Field | Description | Default |
 |---|---|---|
@@ -88,9 +92,6 @@ Navigate to **Spots → XT Tab → Create Cylinders from Spots**.
 
 > **Note on geometry:** The cylinder axis is oriented along the local spot direction vector. The *diameter* defines the width of the disc across its face, and the *thickness* defines how far the cylinder extends along the axis. For example, a 500 μm diameter and 300 μm thickness produces a disc 500 μm across and 300 μm deep.
 
-**Example images**
-
-![Dialog box showing the diameter and thickness input fields with default values](Images/Screengrabs_for_Instruction/SpotsToCylinder_2_Dialog2.PNG)
 
 ---
 
@@ -138,6 +139,8 @@ The script will stop and display an error message if:
 
 **Dialog: "How should cylinder intensities be assigned?"**
 
+![intensity assignment dialog box](Images/Screengrabs_for_Instruction/SpotsToCylinder_6_MatchIntensitytoID.PNG)
+
 This dialog determines what intensity value is written into the output channel for each cylinder.
 
 | Option | Intensity value assigned | When to use |
@@ -151,9 +154,6 @@ This dialog determines what intensity value is written into the output channel f
 > **Which should I choose?**  
 > For most workflows, **Sequential** is the simpler and recommended choice — the channel values start at 1, increase by 1 per spot, and are easy to interpret. Choose **Match Imaris Spot ID (+1)** only if you need to cross-reference the cylinder channel against other Imaris objects or statistics that use the same Spot IDs.
 
-**Example images**
-
-![intensity assignment dialog box](Images/Screengrabs_for_Instruction/SpotsToCylinder_6_MatchIntensitytoID.PNG)
 
 ---
 
@@ -199,9 +199,9 @@ Total planes created : 312
 
 **Example images**
 
-*[Insert image: Imaris channel display showing the completed cylinder channel overlaid on the LSFM image, with spots visible at the centre of each cylinder]*
+![Spots](Images/Screengrabs_for_Instruction/SpotsToCylinder_0_Spot.png)
+![Cylinder](Images/Screengrabs_for_Instruction/SpotsToCylinder_4_VariousDiameter.png)
 
-*[Insert image: cross-sectional slice view showing that the cylinder correctly fills the electrode contact region]*
 
 ---
 
