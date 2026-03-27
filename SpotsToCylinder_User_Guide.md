@@ -100,22 +100,18 @@ A file browser will open for you to select your CSV file.
 
 ##### CSV format
 
-The CSV file must contain **three columns with no header row**:
+The CSV file must contain **three columns**. A header row is optional.
 
-| Column | Content |
-|---|---|
-| 1 | Imaris Spot ID |
-| 2 | Cylinder diameter (μm) |
-| 3 | Cylinder thickness (μm) |
+| Spot ID | Diameter (um) | Thickness (um) |
+|---|---|---|
+| 0 | 500 | 300 |
+| 1 | 480 | 300 |
+...
 
-One row per spot. Example:
+**Example images**
 
-```
-0,500,300
-1,480,300
-2,470,300
-3,450,300
-```
+![Example CSV](Images/Screengrabs_for_Instruction/SpotsToCylinder_4_VariousDiameter_CSV.png)
+
 [↑ Back to Prerequisites](#prerequisites)
 
 **How to find Imaris Spot IDs:**  
@@ -134,9 +130,7 @@ The script will stop and display an error message if:
 - Duplicate Spot IDs are found in the CSV
 - A CSV Spot ID does not match any spot in the current spots object
 
-**Example images**
 
-![Example CSV](Images/Screengrabs_for_Instruction/SpotsToCylinder_4_VariousDiameter_CSV.png)
 
 ---
 
@@ -159,7 +153,7 @@ This dialog determines what intensity value is written into the output channel f
 
 **Example images**
 
-![intensity assignment dialog box showing the two options](Images/Screengrabs_for_Instruction/SpotsToCylinder_6_MatchIntensitytoID.png)
+![intensity assignment dialog box](Images/Screengrabs_for_Instruction/SpotsToCylinder_6_MatchIntensitytoID.png)
 
 ---
 
