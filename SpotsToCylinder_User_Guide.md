@@ -153,7 +153,7 @@ This dialog determines what intensity value is written into the output channel f
 
 **Example images**
 
-![intensity assignment dialog box](Images/Screengrabs_for_Instruction/SpotsToCylinder_6_MatchIntensitytoID.png)
+![intensity assignment dialog box](Images/Screengrabs_for_Instruction/SpotsToCylinder_6_MatchIntensitytoID.PNG)
 
 ---
 
