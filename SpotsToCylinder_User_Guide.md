@@ -5,8 +5,13 @@
 **Contact:** ellie.cho@unimelb.edu.au | bomp-enquiries@unimelb.edu.au  
 **Version:** 1.0 — March 2026 | Tested in Imaris 10.2
 
-> **Citation requirement:** If results arising from this script are used in any publication, Dr Ellie Cho should be considered as an author.
-
+## Manuscript
+ 
+These scripts are described in full in the following manuscript, currently under preparation:
+ 
+> Trang EP, Cho E, Wise A, Segal-Wasserman G, Fallon JB. *A detailed protocol for three-dimensional analysis of a chronically implanted and stimulated cochlea.* **Manuscript in preparation.**
+ 
+A formal citation and DOI will be added here upon publication.
 ---
 
 ## Overview
@@ -31,7 +36,6 @@ Cylinder dimensions (diameter and thickness) can either be set uniformly for all
 
 1. Copy `SpotsToCylinder.m` into your Imaris XTensions folder
 2. In Imaris: **Edit → Preferences → Custom Tools**, confirm the folder path is listed
-3. Restart Imaris
 
 The script will appear under: **Spots → XT Tab → Create Cylinders from Spots**
 
@@ -85,7 +89,7 @@ Navigate to **Spots → XT Tab → Create Cylinders from Spots**.
 
 **Example images**
 
-*[Insert image: dialog box showing the diameter and thickness input fields with default values]*
+[dialog box showing the diameter and thickness input fields with default values](Images/SpotsToCylinder_1_Dialog1.PNG)
 
 ---
 
