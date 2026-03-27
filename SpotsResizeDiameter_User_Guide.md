@@ -1,11 +1,17 @@
 # SpotsResizeDiameter — User Guide
 
-**Script:** `SpotsResizeDiameter.m`  
+**Script:** SpotsResizeDiameter.m  
 **Author:** Dr Ellie Cho, Biological Optical Microscopy Platform (BOMP), The University of Melbourne  
 **Contact:** ellie.cho@unimelb.edu.au | bomp-enquiries@unimelb.edu.au  
 **Version:** 1.0 — March 2026 | Tested in Imaris 10.2
 
-> **Citation requirement:** If results arising from this script are used in any publication, Dr Ellie Cho should be considered as an author.
+## Manuscript
+ 
+These scripts are described in full in the following manuscript, currently under preparation:
+ 
+> Trang EP, Cho E, Wise A, Segal-Wasserman G, Fallon JB. *A detailed protocol for three-dimensional analysis of a chronically implanted and stimulated cochlea.* **Manuscript in preparation.**
+ 
+A formal citation and DOI will be added here upon publication.
 
 ---
 
