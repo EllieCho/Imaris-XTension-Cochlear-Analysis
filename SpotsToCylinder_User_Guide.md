@@ -74,6 +74,7 @@ Navigate to **Spots → XT Tab → Create Cylinders from Spots**.
 | **Identical for all** | All spots should have the same cylinder dimensions |
 | **Various (load CSV)** | Each spot has a different diameter and/or thickness |
 
+![Dialog box checking cylinder diameter and thickness identicality](Images/Screengrabs_for_Instruction/SpotsToCylinder_1_Dialog1.PNG)
 ---
 
 #### Option A: Identical for all spots
@@ -89,7 +90,7 @@ Navigate to **Spots → XT Tab → Create Cylinders from Spots**.
 
 **Example images**
 
-![Dialog box showing the diameter and thickness input fields with default values](Images/Screengrabs_for_Instruction/SpotsToCylinder_1_Dialog1.PNG)
+![Dialog box showing the diameter and thickness input fields with default values](Images/Screengrabs_for_Instruction/SpotsToCylinder_2_Dialog2.PNG)
 
 ---
 
@@ -115,6 +116,7 @@ One row per spot. Example:
 2,470,300
 3,450,300
 ```
+[↑ Back to Prerequisites](#prerequisites)
 
 **How to find Imaris Spot IDs:**  
 In Imaris, select your spots object → go to the **Statistics** tab → select **Specific Values** → find the **ID** statistic. The IDs listed correspond to column 1 of the CSV.
@@ -134,7 +136,7 @@ The script will stop and display an error message if:
 
 **Example images**
 
-*[Insert image: example CSV file opened in a spreadsheet, showing the 3-column format with electrode-specific values]*
+![Example CSV](Images/Screengrabs_for_Instruction/SpotsToCylinder_4_VariousDiameter_CSV.png)
 
 ---
 
@@ -157,7 +159,7 @@ This dialog determines what intensity value is written into the output channel f
 
 **Example images**
 
-*[Insert image: the intensity assignment dialog box showing the two options]*
+![intensity assignment dialog box showing the two options](Images/Screengrabs_for_Instruction/SpotsToCylinder_6_MatchIntensitytoID.png)
 
 ---
 
