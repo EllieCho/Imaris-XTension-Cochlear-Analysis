@@ -174,9 +174,7 @@ else
         cylinderDiameters(idx)   = csvData(k, 2);
         cylinderThicknesses(idx) = csvData(k, 3);
     end
- 
-    skippedIDs = spotIDs(isnan(cylinderDiameters));
-    
+     
     channelParamLabel = 'per csv';
      
 end
