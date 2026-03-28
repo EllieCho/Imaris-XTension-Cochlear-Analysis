@@ -22,15 +22,12 @@ The resulting channel is a **labeled map**: every voxel's intensity value identi
 
 **Example use case:** Partitioning Rosenthal's canal into electrode-specific regions of interest. Spots placed at electrode centres are used to divide the cochlear space so that auditory neurons can be counted within the region associated with each electrode.
 
-![Example](
+![Example](Images/Screengrabs_for_Instruction/SpotsVoronoiCreate_0_Usage_Example.PNG)
 
 ## Prerequisites
 
 - At least one **Spots** object with a minimum of 2 spots
 - Adequate RAM for your dataset size
-- The dataset bit depth should be sufficient to represent all spot IDs (see [Bit depth dialog](#dialog-2-bit-depth-warning-if-applicable))
-
-
 
 ## Installation
 
@@ -40,7 +37,6 @@ The resulting channel is a **labeled map**: every voxel's intensity value identi
 
 The script will appear under: **Spots → XT Tab → Create Voronoi Channel**
 
----
 
 ## Workflow
 
@@ -52,29 +48,33 @@ The script processes spots in the **original Imaris spot index order** (the orde
 
 > **Minimum:** 2 spots are required.
 
----
+<br>
 
 ### Step 2: Select the spots object
 
 Select the spots object in the Imaris scene before running the script. If no spots object is selected, the script will automatically use the first spots object found in the scene.
 
----
+<br>
 
 ### Step 3: Run the script
 
 Navigate to **Spots → XT Tab → Create Voronoi Channel**.
 
----
+<br>
 
 ### Step 4: Intensity assignment dialog
 
 **Dialog: "How should Voronoi cell intensities be assigned?"**
 
+![Dialog box](Images/Screengrabs_for_Instruction/SpotsVoronoiCreate_1_Dialog1.PNG)
+
 This dialog determines what intensity value is written into the Voronoi channel for each spot's region.
+
+<br>
 
 | Option | Intensity value assigned | When to use |
 |---|---|---|
-| **Sequential (1, 2, 3...)** | 1 for the first spot in index order, 2 for the second, and so on | Default choice; simpler to interpret |
+| **Sequential (1, 2, 3...)** | 1 for the first spot in index order, 2 for the second, and so on | **Default choice**; simpler to interpret |
 | **Match Imaris Spot ID** | The actual Imaris Spot ID for each spot | Use when the downstream analysis requires matching back to specific Imaris-tracked spots |
 
 > **Which should I choose?**  
@@ -86,20 +86,14 @@ The two extrapolated ghost points are always assigned special IDs:
 
 These border regions are outside the range of real spots and will be excluded by the downstream surface masking steps.
 
-**Example images**
-
-*[Insert image: the dialog box showing the two intensity assignment options]*
-
-*[Insert image: the resulting Voronoi channel displayed in Imaris (yellow), showing distinct intensity regions around each spot]*
-
----
+<br>
 
 ### Dialog 2: Bit depth warning (if applicable)
-
-This dialog only appears when the maximum intensity value required exceeds the current dataset bit depth.
-
 **Dialog: "The maximum intensity value exceeds the current dataset bit depth"**
-
+![Dilog box](Images/Screengrabs_for_Instruction/SpotsVoronoiCreate_3_Dialog_BitdepthWarning.png)
+<br>
+This dialog only appears when the maximum intensity value required exceeds the current dataset bit depth.
+<br>
 | Option | Behaviour |
 |---|---|
 | **Upgrade to 16-bit** | The new channel is written at 16-bit depth, accommodating up to 65,535 intensity values |
@@ -110,7 +104,7 @@ This dialog only appears when the maximum intensity value required exceeds the c
 > - With **Match Imaris Spot ID**, this appears if the largest Imaris Spot ID in your spots object exceeds 255.  
 > Upgrading to 16-bit is recommended whenever this dialog appears.
 
----
+<br>
 
 ### Step 5: Output
 
@@ -123,21 +117,23 @@ The channel range is automatically set from 0 to the maximum spot ID (or N+1 for
 
 > **Important:** Save your Imaris file immediately after the script completes. The Voronoi channel is the starting point for all downstream masking steps.
 
-**Example images**
+![Output](Images/Screengrabs_for_Instruction/SpotsVoronoiCreate_4_Output.png)
 
-*[Insert image: the completed Voronoi channel overlaid on the LSFM image, with the electrode spot positions visible, showing colour-coded regions extending through the tissue volume]*
+<br>
 
-*[Insert image: a slice view through the Voronoi channel showing distinct intensity steps at each Voronoi boundary]*
+## Additional Example
 
----
+![Next](Images/Screengrabs_for_Instruction/SpotsVoronoiCreate_4_Additional_Example.png)
+
+<br>
 
 ## Memory and performance
 
-The tessellation is computed in chunks of 10 z-slices to keep memory usage within practical limits for large datasets. For a typical dataset (e.g., 2758 × 3496 × 530 voxels at uint16), peak memory usage during this stage is approximately 11 GB. The MATLAB console prints the estimated memory requirement and available physical memory (on Windows) before processing begins.
+The tessellation is computed in chunks of 10 z-slices to keep memory usage within practical limits for large datasets. For a typical dataset (e.g., 2758 × 3496 × 530 voxels at uint16), peak memory usage during this stage is approximately 11 GB. 
 
 Processing time scales with dataset volume and number of spots. For the dataset dimensions above with 8 spots, processing takes approximately 10–20 minutes.
 
----
+<br>
 
 ## What happens next
 
@@ -147,11 +143,10 @@ The Voronoi channel on its own covers the entire image volume, including regions
 2. **Spot-based masking** (optional) — mask the result with enlarged spots (`SpotsResizeDiameter.m`) to further restrict the region to the vicinity of the electrodes
 3. **Surface creation** — convert the masked labeled channel to individual surface objects (`CreateSurfacesFromLabeledMap.m`)
 
-**Example images**
+<br>
 
-*[Insert image: side-by-side comparison of the Voronoi channel before masking (full volume) and after surface-based masking (restricted to Rosenthal's canal)]*
 
----
+
 
 ## Troubleshooting
 
