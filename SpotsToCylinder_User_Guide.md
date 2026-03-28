@@ -151,7 +151,7 @@ This dialog determines what intensity value is written into the output channel f
 This dialog only appears when the maximum intensity value required exceeds the current dataset bit depth.
 
 **Dialog: "The maximum intensity value exceeds the current dataset bit depth"**
-![Bit depth warning dialog box](Images/Screengrabs_for_Instruction/SpotsToCylinder_7_Bitdepth.PNG)
+![Bit depth warning dialog box](Images/Screengrabs_for_Instruction/SpotsToCylinder_7_Bitdepth.png)
 
 | Option | Behaviour |
 |---|---|
