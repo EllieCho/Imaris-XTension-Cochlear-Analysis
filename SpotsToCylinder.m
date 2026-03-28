@@ -134,7 +134,7 @@ if strcmp(uniformChoice, 'Identical for all')
         return;
     end
 
-    cylinderDiameters  = repmat(cylinderDiameter,  numSpots, 1);
+    cylinderDiameters   = repmat(cylinderDiameter,  numSpots, 1);
     cylinderThicknesses = repmat(cylinderThickness, numSpots, 1);
     channelParamLabel   = sprintf('D=%.0fum T=%.0fum', cylinderDiameter, cylinderThickness);
 
@@ -159,7 +159,6 @@ else
         return;
     end
  
-    % Detect missing spots 
     cylinderDiameters   = NaN(numSpots, 1);
     cylinderThicknesses = NaN(numSpots, 1);
     
@@ -175,7 +174,6 @@ else
         cylinderThicknesses(idx) = csvData(k, 3);
     end
  
-      
     channelParamLabel = 'per csv';
      
 end
@@ -252,7 +250,6 @@ optimalPlaneSpacing = minVoxelSize;
  
 vWaitBar = waitbar(0, 'Creating Cylinders from Spots');
 totalPlanesCreated = 0;
-
 
 % Ghost point extrapolated before spot ID 0 (first in time group)
 p1         = positions(1, :);
