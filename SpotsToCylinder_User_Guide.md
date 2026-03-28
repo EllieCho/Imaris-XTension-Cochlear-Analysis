@@ -52,14 +52,19 @@ Spots do not need to be placed in any particular spatial order, but note that th
 
 > **Minimum:** 2 spots are required.
 
+<br>
 
 ### Step 2: Select the spots object
 
 Select the spots object in the Imaris scene before running the script. If no spots object is selected, the script will automatically use the first spots object found in the scene.
 
+<br>
+
 ### Step 3: Run the script
 
 Navigate to **Spots → XT Tab → Create Cylinders from Spots**.
+
+<br>
 
 ### Step 4: Cylinder parameters dialog
 
@@ -72,9 +77,9 @@ Navigate to **Spots → XT Tab → Create Cylinders from Spots**.
 | **Identical for all** | All spots should have the same cylinder dimensions |
 | **Various (load CSV)** | Each spot has a different diameter and/or thickness |
 
+<br>
 
-
-#### Step 4. Option A: Identical for all spots
+#### Option A: Identical for all spots
 
 **Dialog: Cylinder Parameters**
 
@@ -87,8 +92,9 @@ Navigate to **Spots → XT Tab → Create Cylinders from Spots**.
 
 > **Note on geometry:** The cylinder axis is oriented along the local spot direction vector. The *diameter* defines the width of the disc across its face, and the *thickness* defines how far the cylinder extends along the axis. For example, a 500 μm diameter and 300 μm thickness produces a disc 500 μm across and 300 μm deep.
 
+<br>
 
-#### Step 4. Option B: Per-spot parameters via CSV
+#### Option B: Per-spot parameters via CSV
 
 A file browser will open for you to select your CSV file.
 
@@ -108,6 +114,8 @@ The CSV file must contain **three columns**. A header row is optional.
 
 [↑ Back to Prerequisites](#prerequisites)
 
+<br>
+
 **How to find Imaris Spot IDs:**  
 In Imaris, select your spots object → go to the **Statistics** tab → select **Specific Values** → find the **ID** statistic. The IDs listed correspond to column 1 of the CSV.
 
@@ -124,6 +132,7 @@ The script will stop and display an error message if:
 - Duplicate Spot IDs are found in the CSV
 - A CSV Spot ID does not match any spot in the current spots object
 
+<br>
 
 ### Step 5: Intensity assignment dialog
 
@@ -144,7 +153,7 @@ This dialog determines what intensity value is written into the output channel f
 > **Which should I choose?**  
 > For most workflows, **Sequential** is the simpler and recommended choice — the channel values start at 1, increase by 1 per spot, and are easy to interpret. Choose **Match Imaris Spot ID (+1)** only if you need to cross-reference the cylinder channel against other Imaris objects or statistics that use the same Spot IDs.
 
-
+<br>
 
 ### Step 6: Bit depth warning (if applicable)
 
@@ -163,7 +172,7 @@ This dialog only appears when the maximum intensity value required exceeds the c
 > - With **Match Imaris Spot ID (+1)**, this appears if any Spot ID + 1 exceeds 255 — which can happen if Imaris has assigned large ID numbers to your spots.  
 > Upgrading to 16-bit is recommended whenever this dialog appears. Note that this will increase your file size.
 
-
+<br>
 
 ### Step 7: Output
 
