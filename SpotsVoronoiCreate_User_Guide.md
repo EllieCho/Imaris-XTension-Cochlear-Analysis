@@ -13,7 +13,6 @@ These scripts are described in full in the following manuscript, currently under
  
 A formal citation and DOI will be added here upon publication.
 
----
 
 ## Overview
 
@@ -23,7 +22,7 @@ The resulting channel is a **labeled map**: every voxel's intensity value identi
 
 **Example use case:** Partitioning Rosenthal's canal into electrode-specific regions of interest. Spots placed at electrode centres are used to divide the cochlear space so that auditory neurons can be counted within the region associated with each electrode.
 
----
+![Example](
 
 ## Prerequisites
 
@@ -31,7 +30,7 @@ The resulting channel is a **labeled map**: every voxel's intensity value identi
 - Adequate RAM for your dataset size
 - The dataset bit depth should be sufficient to represent all spot IDs (see [Bit depth dialog](#dialog-2-bit-depth-warning-if-applicable))
 
----
+
 
 ## Installation
 
