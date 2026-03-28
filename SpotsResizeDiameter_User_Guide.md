@@ -13,7 +13,7 @@ These scripts are described in full in the following manuscript, currently under
  
 A formal citation and DOI will be added here upon publication.
 
----
+<br>
 
 ## Overview
 
@@ -23,14 +23,16 @@ The primary purpose of this script is to create enlarged spot volumes for use as
 
 **Example use case:** After generating a Voronoi channel restricted to Rosenthal's canal, enlarge electrode spots to 2000 μm diameter and use the resulting enlarged spots object to mask the Voronoi channel, retaining only Voronoi regions within 1000 μm of any electrode centre.
 
----
+![Example](Images/Screengrabs_for_Instruction/SpotsResizeDiameter_0_UsageExample.png)
+
+<br>
 
 ## Prerequisites
 
 - At least one **Spots** object in the Imaris scene
 - Familiarity with Imaris channel masking (**Edit → Mask Channel**)
 
----
+<br>
 
 ## Installation
 
@@ -40,7 +42,7 @@ The primary purpose of this script is to create enlarged spot volumes for use as
 
 The script will appear under: **Spots → XT Tab → Resize Spots to Diameter**
 
----
+<br>
 
 ## Workflow
 
@@ -48,17 +50,19 @@ The script will appear under: **Spots → XT Tab → Resize Spots to Diameter**
 
 Select the spots object you want to resize in the Imaris scene. If no spots object is selected, the script will automatically use the first spots object found in the scene.
 
----
+<br>
 
 ### Step 2: Run the script
 
 Navigate to **Spots → XT Tab → Resize Spots to Diameter**.
 
----
+<br>
 
 ### Step 3: Diameter input dialog
 
 **Dialog: Resize Spots Parameters**
+
+![Dialog](Images/Screengrabs_for_Instruction/SpotsResizeDiameter_0_Dialog.png)
 
 | Field | Description | Default |
 |---|---|---|
@@ -70,13 +74,7 @@ Navigate to **Spots → XT Tab → Resize Spots to Diameter**.
 
 > **Units:** The value is always in micrometres, regardless of the voxel size of your dataset.
 
-**Example images**
-
-*[Insert image: the diameter input dialog, showing the default value of 2000 and the prompt text]*
-
-*[Insert image: side-by-side view in Imaris showing the original small spots (at electrode centres) and the enlarged spots after running the script, demonstrating the size difference in the 3D scene]*
-
----
+<br>
 
 ### Step 4: Output
 
@@ -88,6 +86,8 @@ A new spots object is added to the Imaris scene, named:
 
 where `2000.0` is replaced with whatever diameter you entered.
 
+![Example1](Images/Screengrabs_for_Instruction/SpotsResizeDiameter_2_ResizedSpot3.png)
+
 The new spots object retains:
 - All original spot positions (XYZ coordinates)
 - All original time indices
@@ -95,13 +95,11 @@ The new spots object retains:
 
 The original spots object is unchanged.
 
-**Example images**
+<br>
 
-*[Insert image: the Imaris scene tree showing both the original spots and the newly created resized spots object]*
+![Example](Images/Screengrabs_for_Instruction/SpotsResizeDiameter_2_ResizedSpot2.png)
 
-*[Insert image: a 3D view showing the enlarged spots overlapping the Voronoi channel, illustrating the spatial relationship between the masking volume and the Voronoi regions]*
-
----
+<br>
 
 ## What happens next
 
@@ -117,13 +115,17 @@ After creating the enlarged spots, use the **Imaris Mask Channel** function to a
 8. Rename the resulting channel (e.g., `Voronoi Cells (Surface + Spots Masked)`)
 9. Save your file
 
-**Example images**
+**Example Mask Window**
 
-*[Insert image: the Imaris Mask Channel dialog box, with annotations indicating the correct settings for each field]*
+![Masking](Images/Screengrabs_for_Instruction/SpotsResizeDiameter_4_MaskingVoronoiChannel.png)
 
-*[Insert image: the Voronoi channel after spot-based masking, showing the regions that were retained versus excluded]*
+<br>
 
----
+**Example of Double Masking**
+
+![Double Masking](Images/Screengrabs_for_Instruction/SpotsResizeDiameter_7_DoubleMasking2.PNG)
+
+<br>
 
 ## Troubleshooting
 
