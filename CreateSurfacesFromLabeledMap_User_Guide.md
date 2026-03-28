@@ -13,17 +13,17 @@ These scripts are described in full in the following manuscript, currently under
  
 A formal citation and DOI will be added here upon publication.
 
----
+<br>
 
 ## Overview
 
-This script reads a labeled image channel — a channel where each voxel's intensity identifies which object it belongs to — and creates a separate Imaris **surface object** for each unique intensity value. All resulting surfaces are collected into a folder named `Labeled Surfaces` in the Imaris scene.
+This script reads a labeled image channel — a channel where each voxel's intensity identifies which object it belongs to — and creates a separate Imaris **surface object** for each unique intensity value. All resulting surfaces are collected into a folder in the Imaris scene.
 
 The script is designed to work with channels produced by `SpotsVoronoiCreate.m` after masking, but it will work with any labeled channel where each label represents a distinct region of interest.
 
 **Example use case:** After masking the Voronoi channel to the region of Rosenthal's canal in close proximity to the electrode array, this script converts each electrode-specific region into a surface object. The resulting surfaces can then be used with the **Find Spots Close to Surface** XTension to count auditory neurons within each electrode's spatial territory, or to measure tissue response volume per electrode.
 
----
+![example]
 
 ## Prerequisites
 
