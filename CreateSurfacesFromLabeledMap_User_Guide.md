@@ -23,15 +23,14 @@ The script is designed to work with channels produced by `SpotsVoronoiCreate.m` 
 
 **Example use case:** After masking the Voronoi channel to the region of Rosenthal's canal in close proximity to the electrode array, this script converts each electrode-specific region into a surface object. The resulting surfaces can then be used with the **Find Spots Close to Surface** XTension to count auditory neurons within each electrode's spatial territory, or to measure tissue response volume per electrode.
 
-![example]
+![example](Images/Screengrabs_for_Instruction/CreateSurfacesFromLabeledMap_0_UseCase.png)
 
 ## Prerequisites
 
 - A **labeled image channel** in the current dataset (e.g., a masked Voronoi channel)
-- At least one **surface object** in the scene (required for the XT tab to be accessible — the actual surface selected does not matter)
 - Adequate RAM for your dataset size
 
----
+<br>
 
 ## Installation
 
@@ -39,11 +38,14 @@ The script is designed to work with channels produced by `SpotsVoronoiCreate.m` 
 2. In Imaris: **Edit → Preferences → Custom Tools**, confirm the folder path is listed
 3. Restart Imaris
 
-The script will appear under: **Surfaces → XT Tab → Create Surfaces from Labeled Map**
+The script is accessible from two locations depending on whether a surface object exists in the scene:
+ 
+- **If a surface is already present:** select it, then go to **Surfaces → XT Tab → Create Surfaces from Labeled Map**
+- **If no surface exists yet:** go to **Image Processing → Surfaces Functions → Create Surfaces from Labeled Map**
+ 
+> **Note:** When accessing via the Surfaces XT tab, the surface you select does not affect the script's behaviour — any surface will do.
 
-> **Access note:** This script appears in the Surfaces XT tab. You must have a surface object selected (or present in the scene) for the XT tab to be visible. The surface you select does not affect the script's behaviour.
-
----
+<br>
 
 ## Workflow
 
@@ -56,21 +58,17 @@ Ensure your labeled channel has been masked appropriately before running this sc
 
 The script will create one surface per unique non-zero intensity value in the selected channel. Background voxels (intensity = 0) are always ignored.
 
----
+<br>
 
-### Step 2: Select a surface object
+### Step 2: Run the script
+ 
+If you have an existing surface object in the scene, select it and navigate to **Surfaces → XT Tab → Create Surfaces from Labeled Map**.
+If no surface exists yet, access the script directly via **Image Processing → Surfaces Functions → Create Surfaces from Labeled Map**.
 
-Click on any surface object in the Imaris scene to make the Surfaces XT tab accessible.
+<br>
 
----
 
-### Step 3: Run the script
-
-Navigate to **Surfaces → XT Tab → Create Surfaces from Labeled Map**.
-
----
-
-### Step 4: Channel selection dialog
+### Step 3: Channel selection dialog
 
 **Dialog: "Select the channel containing labeled objects"**
 
@@ -80,13 +78,17 @@ A list of all channels in the current dataset is displayed. Select the channel y
 
 **Example images**
 
-*[Insert image: the channel selection list dialog, showing example channel names and the labeled Voronoi channel highlighted]*
+![Channels](Images/Screengrabs_for_Instruction/CreateSurfacesFromLabeledMap_0_ChList.PNG)
 
----
+<br>
 
-### Step 5: Minimum object size dialog
+### Step 4: Minimum object size dialog
 
 **Dialog: Surface Creation Parameters — "Minimum object size (voxels, 0 for all)"**
+
+![Filter](Images/Screengrabs_for_Instruction/CreateSurfacesFromLabeledMap_1_SizeFilter.PNG)
+
+<br>
 
 | Field | Description | Default |
 |---|---|---|
@@ -99,15 +101,15 @@ A list of all channels in the current dataset is displayed. Select the channel y
 > **Choosing a threshold:**  
 > A value of 10 voxels is appropriate for most datasets and will exclude single-voxel noise while retaining all genuine biological structures. If your dataset has very small but meaningful features, reduce this value. If you are seeing many spurious small surfaces in the output, increase it.
 
-**Example images**
+<br>
 
-*[Insert image: the minimum object size input dialog]*
-
----
-
-### Step 6: Smoothing dialog
+### Step 5: Smoothing dialog
 
 **Dialog: "How should surfaces be generated?"**
+
+![Smoothing](Images/Screengrabs_for_Instruction/CreateSurfacesFromLabeledMap_2_Smoothing.PNG)
+
+<br>
 
 | Option | Behaviour |
 |---|---|
@@ -118,15 +120,15 @@ A list of all channels in the current dataset is displayed. Select the channel y
 > - Use **No Smoothing** when surface boundaries must precisely match the labeled regions — for example, when the surface will be used to count spots or measure volumes where exact boundary fidelity matters. This is the recommended choice for the Voronoi tessellation workflow.  
 > - Use **Smoothing** when you want surfaces for 3D visualisation purposes and a more anatomically natural appearance is preferred over strict boundary precision.
 
-**Example images**
+<br>
 
-*[Insert image: the smoothing choice dialog]*
-
----
-
-### Step 7: Smoothing factor dialog (if Smoothing was selected)
+### Step 6: Smoothing factor dialog (if Smoothing was selected)
 
 **Dialog: "Smoothing factor (default = 2x mean XY voxel spacing)"**
+
+![SmoothingFactor](Images/Screengrabs_for_Instruction/CreateSurfacesFromLabeledMap_3_SmoothingFactor.PNG)
+
+<br>
 
 | Field | Description |
 |---|---|
@@ -140,13 +142,11 @@ The default value is pre-calculated as **2× the mean XY voxel spacing** of your
 
 **Example images**
 
-*[Insert image: the smoothing factor input dialog, showing the pre-populated default value]*
+![comparison](Images/Screengrabs_for_Instruction/CreateSurfacesFromLabeledMap_4_SmoothingComparison.png)
 
-*[Insert image: side-by-side comparison of a surface created with no smoothing versus with the default smoothing factor, demonstrating the visual difference]*
+<br>
 
----
-
-### Step 8: Output
+### Step 7: Output
 
 A folder is added to the Imaris scene, named to reflect the smoothing choice made:
 
@@ -164,22 +164,13 @@ Label_3
 
 where the number corresponds to the intensity value in the labeled channel (i.e., the spot index or Spot ID, depending on which intensity mode was used in `SpotsVoronoiCreate.m`).
 
-The MATLAB console prints a summary:
-```
-Surface creation complete.
-Created 5 non-smoothed surfaces from labeled map
-Channel: Voronoi Cells (Surface + Spots Masked)
-```
+![Example](Images/Screengrabs_for_Instruction/CreateSurfacesFromLabeledMap_5_Output.png)
+<br>
+
 
 > **Important:** Save your Imaris file immediately after the script completes.
 
-**Example images**
-
-*[Insert image: the Imaris scene tree showing the Labeled Surfaces folder with individual Label_N surface objects listed inside]*
-
-*[Insert image: 3D view of the completed surfaces, each coloured distinctly to show the spatial partitioning of the tissue into electrode-specific regions]*
-
----
+<br>
 
 ## What happens next
 
@@ -194,7 +185,7 @@ Repeat for each surface, or use the Imaris batch processing tools if available.
 
 For tissue response quantification, the volume of each surface object (available in the Imaris Statistics tab under **Volume**) gives the total tissue response volume associated with that electrode.
 
----
+<br>
 
 ## Troubleshooting
 
