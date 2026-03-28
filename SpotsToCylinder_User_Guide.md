@@ -185,7 +185,7 @@ A new channel is added to the Imaris dataset (yellow by default). The channel na
 | Per-spot CSV, sequential intensity | `Spot Cylinders (per csv, sequential)` |
 | Per-spot CSV, Imaris ID | `Spot Cylinders (per csv, Imaris ID+1)` |
 
-Each cylinder's voxels carry the intensity value assigned to its spot (either sequential index or Imaris Spot ID + 1). Background voxels (outside all cylinders) have intensity 0. This makes the channel a labeled map that can be used directly for downstream masking or surface creation with `CreateSurfacesFromLabeledMap.m`.
+Each cylinder's voxels carry the intensity value assigned to its spot (either sequential index or Imaris Spot ID + 1). Background voxels (outside all cylinders) have intensity 0. 
 
 > **Important:** Save your Imaris file immediately after the script completes.
 

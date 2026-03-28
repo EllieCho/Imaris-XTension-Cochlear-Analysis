@@ -112,10 +112,10 @@ Detailed step-by-step instructions for each script, including all user dialog op
 | `CSV Examples/` | Example CSV files for SpotsToCylinder per-spot parameter mode |
 | `Images/` | Example images and screenshots for user guides |
 | `LICENSE` | CC BY 4.0 licence |
-| `CITATION.cff` | Machine-readable citation metadata |
+
 
 ---
-
+ 
 ## Licence
 
 This work is licensed under the [Creative Commons Attribution 4.0 International Licence](LICENSE).  
