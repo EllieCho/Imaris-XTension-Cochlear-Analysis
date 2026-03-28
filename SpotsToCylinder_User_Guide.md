@@ -151,6 +151,7 @@ This dialog determines what intensity value is written into the output channel f
 This dialog only appears when the maximum intensity value required exceeds the current dataset bit depth.
 
 **Dialog: "The maximum intensity value exceeds the current dataset bit depth"**
+![Bit depth warning dialog box](Images/Screengrabs_for_Instruction/SpotsToCylinder_7_Bitdepth.PNG)
 
 | Option | Behaviour |
 |---|---|
@@ -160,7 +161,7 @@ This dialog only appears when the maximum intensity value required exceeds the c
 > **When does this appear?**  
 > - With **Sequential**, this dialog only appears if you have more than 255 spots.  
 > - With **Match Imaris Spot ID (+1)**, this appears if any Spot ID + 1 exceeds 255 — which can happen if Imaris has assigned large ID numbers to your spots.  
-> Upgrading to 16-bit is recommended whenever this dialog appears.
+> Upgrading to 16-bit is recommended whenever this dialog appears. Note that this will increase your file size.
 
 
 
@@ -177,18 +178,11 @@ A new channel is added to the Imaris dataset (yellow by default). The channel na
 
 Each cylinder's voxels carry the intensity value assigned to its spot (either sequential index or Imaris Spot ID + 1). Background voxels (outside all cylinders) have intensity 0. This makes the channel a labeled map that can be used directly for downstream masking or surface creation with `CreateSurfacesFromLabeledMap.m`.
 
-The MATLAB console prints a summary:
-```
-=== Spot Cylinders Creation Complete ===
-Total cylinders      : 8
-Total planes created : 312
-```
-
 > **Important:** Save your Imaris file immediately after the script completes.
 
 **Example images**
 
-![Result](Images/Screengrabs_for_Instruction/SpotsToCylinder_8_Recontructed3.png)
+![Result](Images/Screengrabs_for_Instruction/SpotsToCylinder_8_Recontructed4.png)
 
 
 ## Technical notes
