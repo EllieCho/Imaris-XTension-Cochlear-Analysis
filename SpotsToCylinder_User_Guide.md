@@ -22,7 +22,7 @@ This script generates a new image channel in Imaris where each spot is represent
 Cylinder dimensions (diameter and thickness) can either be set uniformly for all spots, or specified individually per spot via a CSV file. This makes the script suitable both for generic use and for applications requiring anatomically specific geometries, such as cochlear electrode array reconstruction.
 
 **Example use case:** Reconstruction of cochlear implant electrodes. Each spot is placed at the manually identified centre of an electrode contact, and a cylinder (yellow) of the corresponding electrode diameter and thickness is generated around it.
-![Reconstruction of cochlear implant electrodes](Images/Screengrabs_for_Instruction/SpotsToCylinder_8_Recontructed.png)
+![Reconstruction of cochlear implant electrodes](Images/Screengrabs_for_Instruction/SpotsToCylinder_8_Recontructed2.png)
 
 
 ## Prerequisites
@@ -74,7 +74,7 @@ Navigate to **Spots → XT Tab → Create Cylinders from Spots**.
 
 
 
-#### Option A: Identical for all spots
+#### Step 4. Option A: Identical for all spots
 
 **Dialog: Cylinder Parameters**
 
@@ -88,9 +88,7 @@ Navigate to **Spots → XT Tab → Create Cylinders from Spots**.
 > **Note on geometry:** The cylinder axis is oriented along the local spot direction vector. The *diameter* defines the width of the disc across its face, and the *thickness* defines how far the cylinder extends along the axis. For example, a 500 μm diameter and 300 μm thickness produces a disc 500 μm across and 300 μm deep.
 
 
----
-
-#### Option B: Per-spot parameters via CSV
+#### Step 4. Option B: Per-spot parameters via CSV
 
 A file browser will open for you to select your CSV file.
 
@@ -120,15 +118,12 @@ Spot ID 5: no CSV entry, skipped
 ```
 This allows you to exclude specific spots from the output without modifying the spots object.
 
-**Validation checks:**  
+**Note**  
 The script will stop and display an error message if:
 - The CSV has fewer than 3 columns
 - Duplicate Spot IDs are found in the CSV
 - A CSV Spot ID does not match any spot in the current spots object
 
-
-
----
 
 ### Step 5: Intensity assignment dialog
 
@@ -140,7 +135,7 @@ This dialog determines what intensity value is written into the output channel f
 
 | Option | Intensity value assigned | When to use |
 |---|---|---|
-| **Sequential (1, 2, 3...)** | 1 for the first spot in Imaris index order, 2 for the second, and so on | Default choice; produces a clean channel with values starting from 1 |
+| **Sequential (1, 2, 3...)** | 1 for the first spot in Imaris index order, 2 for the second, and so on | **Default choice**; produces a clean channel with values starting from 1 |
 | **Match Imaris Spot ID (+1)** | The Imaris Spot ID of each spot, plus 1 | Use when downstream analysis requires matching back to specific Imaris-tracked spots |
 
 > **Why "+1" for the Imaris Spot ID option?**  
@@ -150,7 +145,6 @@ This dialog determines what intensity value is written into the output channel f
 > For most workflows, **Sequential** is the simpler and recommended choice — the channel values start at 1, increase by 1 per spot, and are easy to interpret. Choose **Match Imaris Spot ID (+1)** only if you need to cross-reference the cylinder channel against other Imaris objects or statistics that use the same Spot IDs.
 
 
----
 
 ### Step 6: Bit depth warning (if applicable)
 
@@ -168,7 +162,7 @@ This dialog only appears when the maximum intensity value required exceeds the c
 > - With **Match Imaris Spot ID (+1)**, this appears if any Spot ID + 1 exceeds 255 — which can happen if Imaris has assigned large ID numbers to your spots.  
 > Upgrading to 16-bit is recommended whenever this dialog appears.
 
----
+
 
 ### Step 7: Output
 
@@ -194,16 +188,13 @@ Total planes created : 312
 
 **Example images**
 
-![Spots](Images/Screengrabs_for_Instruction/SpotsToCylinder_0_Spot.png)
-![Cylinder](Images/Screengrabs_for_Instruction/SpotsToCylinder_4_VariousDiameter.png)
+![Result](Images/Screengrabs_for_Instruction/SpotsToCylinder_8_Recontructed3.png)
 
-
----
 
 ## Technical notes
 
 **Spot processing order:**  
-Cylinders are generated in the original Imaris spot index order (the order spots were created). This determines both the sequential intensity values and the direction vectors used for cylinder orientation. Unlike `SpotsVoronoiCreate.m`, this script does not reorder spots using a nearest neighbour algorithm.
+Cylinders are generated in the original Imaris spot index order (the order spots were created). This determines both the sequential intensity values and the direction vectors used for cylinder orientation. 
 
 **Direction calculation:**  
 For each spot, the local direction vector is calculated from the centred difference between its predecessor and successor in the extended spot array. A ghost point is extrapolated one inter-spot distance beyond each endpoint to improve direction accuracy at the array terminals.
@@ -214,7 +205,6 @@ Each cylinder is constructed from a series of overlapping thin planes (thickness
 **Intensity precedence:**  
 Cylinders are drawn using the `max` operator — if cylinders from adjacent spots overlap, the higher intensity value is retained. This rarely occurs with well-spaced spots.
 
----
 
 ## Troubleshooting
 
