@@ -170,7 +170,7 @@ if maxSpotID > bitdepthMax
 end
 
 % Initialise new channel
-[vDataSet, ~, vMin, vMax, vType] = InitNewChannel(vImarisApplication, targetType);
+[vDataSet, vMin, vMax, vType] = InitNewChannel(vImarisApplication, targetType);
 vChannel = vDataSet.GetSizeC - 1; 
  
 vSizeX = vDataSet.GetSizeX;
@@ -214,7 +214,7 @@ for chunkIdx = 1:numChunks
     zCoords = vMin(3) + vVoxelSizeZ/2 + (startSlice-1:endSlice-1) * vVoxelSizeZ;
  
     % Voxel positions for the entire chunk
-    numVoxelsPerSlice  = numel(vGridX);
+    numVoxelsPerSlice   = numel(vGridX);
     chunkVoxelPositions = zeros(numVoxelsPerSlice * currentChunkSize, 3);
  
     for sliceOffset = 1:currentChunkSize
@@ -245,8 +245,8 @@ for chunkIdx = 1:numChunks
     
     % Store results for this chunk
     for sliceOffset = 1:currentChunkSize
-        rowStart   = (sliceOffset - 1) * numVoxelsPerSlice + 1;
-        rowEnd     = sliceOffset * numVoxelsPerSlice;
+        rowStart    = (sliceOffset - 1) * numVoxelsPerSlice + 1;
+        rowEnd      = sliceOffset * numVoxelsPerSlice;
         sliceLabels = voxelLabels(rowStart:rowEnd);
         vLabeledVolume(:, :, startSlice + sliceOffset - 1) = reshape(sliceLabels, size(vGridX));
     end
@@ -307,13 +307,12 @@ end
 
 %% Helper Functions
 
-function [aDataSet, aData, aMin, aMax, aType] = InitNewChannel(aImaris, targetType)
+function [aDataSet, aMin, aMax, aType] = InitNewChannel(aImaris, targetType)
 % Initialise a new empty channel in the dataset
  
 aDataSet = aImaris.GetDataSet.Clone;
 aMin  = [aDataSet.GetExtendMinX, aDataSet.GetExtendMinY, aDataSet.GetExtendMinZ];
 aMax  = [aDataSet.GetExtendMaxX, aDataSet.GetExtendMaxY, aDataSet.GetExtendMaxZ];
-vSize = [aDataSet.GetSizeX, aDataSet.GetSizeY, aDataSet.GetSizeZ];
  
 if nargin >= 2 && ~isempty(targetType) && ~strcmp(aDataSet.GetType, targetType)
     if strcmp(targetType, 'eTypeUInt8')
@@ -323,14 +322,6 @@ if nargin >= 2 && ~isempty(targetType) && ~strcmp(aDataSet.GetType, targetType)
     else
         aDataSet.SetType(Imaris.tType.eTypeFloat);
     end
-end
- 
-if strcmp(aDataSet.GetType, 'eTypeUInt8')
-    aData = zeros(vSize, 'uint8');
-elseif strcmp(aDataSet.GetType, 'eTypeUInt16')
-    aData = zeros(vSize, 'uint16');
-else
-    aData = zeros(vSize, 'single');
 end
  
 aDataSet.SetSizeC(aDataSet.GetSizeC + 1);

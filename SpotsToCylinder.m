@@ -17,7 +17,7 @@
 % create a cylindrical shape for each spot based on a given diameter and thickness. 
 % 
 % The cylinder axis is oriented perpendicular to the local spot direction,
-% calculated using the orignial Imaris spot index order.
+% calculated using the original Imaris spot index order.
 %
 % Cylinder diameter and thickness can be identical for all spots,
 % or specified per spot via a CSV file
@@ -175,8 +175,7 @@ else
         cylinderThicknesses(idx) = csvData(k, 3);
     end
  
-    skippedIDs = spotIDs(isnan(cylinderDiameters));
-    
+      
     channelParamLabel = 'per csv';
      
 end
@@ -254,11 +253,6 @@ optimalPlaneSpacing = minVoxelSize;
 vWaitBar = waitbar(0, 'Creating Cylinders from Spots');
 totalPlanesCreated = 0;
 
-if numSpots < 2
-    close(vWaitBar);
-    msgbox('Need at least 2 spots to create cylinders!');
-    return;
-end
 
 % Ghost point extrapolated before spot ID 0 (first in time group)
 p1         = positions(1, :);
