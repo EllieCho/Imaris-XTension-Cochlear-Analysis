@@ -449,7 +449,7 @@ if any(thicknessCheck(:))
     end
 end
 end
- 
+
 function aData = FixType(aData, aType)
 % Cast data to the correct Imaris data type
  
