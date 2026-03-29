@@ -15,6 +15,14 @@ A formal citation and DOI will be added here upon publication.
 
 <br>
 
+## Citation
+
+If you use these scripts in your work, please cite the software deposit:
+
+> Cho E, Trang EP, Wise A, Segal-Wasserman G, Fallon JB. *Imaris XTension Suite — Cochlear Implant Analysis* (v1.0.0). Zenodo. https://doi.org/10.5281/zenodo.19324059
+
+<br>
+
 ## Overview
 
 This script creates a new spots object in Imaris where all spots are resized to a uniform diameter specified by the user. The positions, time indices, and colour of the original spots are preserved; only the radius is changed.
