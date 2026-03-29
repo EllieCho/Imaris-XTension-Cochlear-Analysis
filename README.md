@@ -45,14 +45,14 @@ All scripts will appear under the **XT Tab** of the relevant Imaris object (Spot
 
 These four scripts form a connected analysis workflow but can each be used independently.
 
-### 1. `SpotsToCylinder.m`
+### 1. `SpotsToCylinders.m`
 **Access:** Spots → XT Tab → Create Cylinders from Spots
 
 Generates a new image channel where each spot is represented as a cylindrical intensity shape. The cylinder axis is oriented perpendicular to the local spot path direction. Cylinder diameter and thickness can be set uniformly for all spots, or specified per spot via a CSV file.
 
 **Primary use:** Three-dimensional reconstruction of cochlear implant electrode contacts from manually identified electrode centres.
 
-[→ User Guide](SpotsToCylinder_User_Guide.md)
+[→ User Guide](SpotsToCylinders_User_Guide.md)
 
 <br>
 
@@ -101,15 +101,15 @@ Detailed step-by-step instructions for each script, including all user dialog op
 
 | File | Description |
 |---|---|
-| `SpotsToCylinder.m` | Script: cylinder generation from spots |
+| `SpotsToCylinders.m` | Script: cylinder generation from spots |
 | `SpotsVoronoiCreate.m` | Script: Voronoi tessellation channel |
 | `SpotsResizeDiameter.m` | Script: uniform spot resizing |
 | `CreateSurfacesFromLabeledMap.m` | Script: surface creation from labeled channel |
-| `SpotsToCylinder_User_Guide.md` | User guide: SpotsToCylinder |
+| `SpotsToCylinders_User_Guide.md` | User guide: SpotsToCylinders |
 | `SpotsVoronoiCreate_User_Guide.md` | User guide: SpotsVoronoiCreate |
 | `SpotsResizeDiameter_User_Guide.md` | User guide: SpotsResizeDiameter |
 | `CreateSurfacesFromLabeledMap_User_Guide.md` | User guide: CreateSurfacesFromLabeledMap |
-| `CSV Examples/` | Example CSV files for SpotsToCylinder per-spot parameter mode |
+| `CSV Examples/` | Example CSV files for SpotsToCylinders per-spot parameter mode |
 | `Images/` | Example images and screenshots for user guides |
 | `LICENSE` | CC BY 4.0 licence |
 
