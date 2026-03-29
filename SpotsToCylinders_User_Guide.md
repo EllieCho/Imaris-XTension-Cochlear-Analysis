@@ -1,6 +1,6 @@
-# SpotsToCylinder — User Guide
+# SpotsToCylinders — User Guide
 
-**Script:** SpotsToCylinder.m  
+**Script:** SpotsToCylinders.m  
 **Author:** Dr Ellie Cho, Biological Optical Microscopy Platform (BOMP), The University of Melbourne  
 **Contact:** ellie.cho@unimelb.edu.au | bomp-enquiries@unimelb.edu.au  
 **Version:** 1.0 — March 2026 | Tested in Imaris 10.2
@@ -35,7 +35,7 @@ Cylinder dimensions (diameter and thickness) can either be set uniformly for all
 
 ## Installation
 
-1. Copy `SpotsToCylinder.m` into your Imaris XTensions folder
+1. Copy `SpotsToCylinders.m` into your Imaris XTensions folder
 2. In Imaris: **Edit → Preferences → Custom Tools**, confirm the folder path is listed
 
 The script will appear under: **Spots → XT Tab → Create Cylinders from Spots**
