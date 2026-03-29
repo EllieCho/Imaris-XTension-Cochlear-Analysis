@@ -41,21 +41,21 @@
 %      <Menu>
 %       <Submenu name="Spots Functions">
 %        <Item name="Create Cylinders from Spots" icon="Matlab">
-%          <Command>MatlabXT::SpotsToCylinder(%i)</Command>
+%          <Command>MatlabXT::SpotsToCylinders(%i)</Command>
 %        </Item>
 %       </Submenu>
 %      </Menu>
 %      <SurpassTab>
 %        <SurpassComponent name="bpSpots">
 %          <Item name="Create Cylinders from Spots" icon="Matlab">
-%            <Command>MatlabXT::SpotsToCylinder(%i)</Command>
+%            <Command>MatlabXT::SpotsToCylinders(%i)</Command>
 %          </Item>
 %        </SurpassComponent>
 %      </SurpassTab>
 %    </CustomTools>
 
 
-function SpotsToCylinder(aImarisApplicationID)
+function SpotsToCylinders(aImarisApplicationID)
 
 % Connect to Imaris interface
 if ~isa(aImarisApplicationID, 'Imaris.IApplicationPrxHelper')
