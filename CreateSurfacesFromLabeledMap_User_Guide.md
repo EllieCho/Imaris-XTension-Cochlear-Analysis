@@ -9,7 +9,7 @@
  
 These scripts are described in full in the following manuscript, currently under preparation:
  
-> Trang EP, Cho E, Wise A, Segal-Wasserman G, Fallon JB. *A detailed protocol for three-dimensional analysis of a chronically implanted and stimulated cochlea.* **Manuscript in preparation.**
+> Trang EP, Cho E, Wise A, Segal G, Fallon JB. *A detailed protocol for three-dimensional analysis of a chronically implanted and stimulated cochlea.* **Manuscript in preparation.**
  
 A formal citation and DOI will be added here upon publication.
 
