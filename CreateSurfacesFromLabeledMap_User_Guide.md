@@ -15,6 +15,14 @@ A formal citation and DOI will be added here upon publication.
 
 <br>
 
+## Citation
+
+If you use these scripts in your work, please cite the software deposit:
+
+> Cho E, Trang EP, Wise A, Segal-Wasserman G, Fallon JB. *Imaris XTension Suite — Cochlear Implant Analysis* (v1.0.0). Zenodo. https://doi.org/10.5281/zenodo.19324059
+
+<br>
+
 ## Overview
 
 This script reads a labeled image channel — a channel where each voxel's intensity identifies which object it belongs to — and creates a separate Imaris **surface object** for each unique intensity value. All resulting surfaces are collected into a folder in the Imaris scene.
