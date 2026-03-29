@@ -19,10 +19,9 @@ A formal citation and DOI will be added here upon publication.
 
 If you use these scripts in your work, please cite the software deposit:
 
-> Cho E, Trang EP, Wise A, Segal-Wasserman G, Fallon JB. *Imaris XTension Suite — Cochlear Implant Analysis* (v1.0.0). Zenodo. https://doi.org/10.5281/zenodo.19324059
+> Cho E, Trang EP. *Imaris XTension Suite — Cochlear Implant Analysis* (v1.0.0). Zenodo. https://doi.org/10.5281/zenodo.19324059
 
 <br>
-
 
 ## Overview
 
