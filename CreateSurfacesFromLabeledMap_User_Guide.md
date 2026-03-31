@@ -6,11 +6,11 @@
 **Version:** 1.0 — March 2026 | Tested in Imaris 10.2
 
 ## Manuscript
- 
+
 These scripts are described in full in the following manuscript, currently under preparation:
- 
-> Trang EP, Cho E, Wise A, Segal G, Fallon JB. *A detailed protocol for three-dimensional analysis of a chronically implanted and stimulated cochlea.* **Manuscript in preparation.**
- 
+
+> Trang EP, Cho E, Wise A, Segal G, Fallon JB. *Light-sheet fluorescence microscopy and spatially resolved three-dimensional analysis of the chronically implanted and stimulated cochlea* **Manuscript in preparation.**
+
 A formal citation and DOI will be added here upon publication.
 
 <br>
