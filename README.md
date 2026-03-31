@@ -105,7 +105,7 @@ Example Imaris datasets demonstrating the full pipeline are available from Figsh
  
 > Cho E. *Example Images — Imaris XTension Suite: Cochlear Implant Analysis.* Figshare. https://doi.org/10.26188/31894942
  
-Two files are provided: an unprocessed dataset (fluorescence channels and manually segmented surfaces) and a processed dataset with all pipeline outputs included. See [`Example_Images_Description.md`](Example_Images_Description.md) for full details of the contents of each file.
+Two files are provided: an unprocessed dataset (fluorescence channels and manually segmented surfaces) and a processed dataset with all pipeline outputs included. See [`Example_Images_Description.md`](Image/Example_Images_Description.md) for full details of the contents of each file.
  
 <br>
 
