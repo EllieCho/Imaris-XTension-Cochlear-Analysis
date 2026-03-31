@@ -99,6 +99,16 @@ Reads a labeled image channel and creates a separate Imaris surface object for e
 
 <br>
 
+## Example data
+ 
+Example Imaris datasets demonstrating the full pipeline are available from Figshare:
+ 
+> Cho E. *Example Images — Imaris XTension Suite: Cochlear Implant Analysis.* Figshare. https://doi.org/10.26188/31894942
+ 
+Two files are provided: an unprocessed dataset (fluorescence channels and manually segmented surfaces) and a processed dataset with all pipeline outputs included. See [`Example_Images_Description.md`](Example_Images_Description.md) for full details of the contents of each file.
+ 
+<br>
+
 ## Workflow overview
 
 ![Complete analysis workflow showing the four scripts and manual masking steps](Images/Screengrabs_for_Instruction/workflow_overview_2.png)
