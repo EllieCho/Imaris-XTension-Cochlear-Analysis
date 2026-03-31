@@ -37,6 +37,8 @@ If you use these scripts in your work, please cite the software deposit:
 | Imaris | 10.2 |
 | MATLAB | R2023b or later (with Imaris XT interface) |
 
+No additional MATLAB toolboxes are required beyond the base installation. The Imaris XT interface (`ImarisLib.jar`) is provided with the Imaris installation.
+
 <br>
 
 ## Installation
