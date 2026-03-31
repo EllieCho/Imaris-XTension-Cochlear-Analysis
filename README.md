@@ -103,9 +103,9 @@ Reads a labeled image channel and creates a separate Imaris surface object for e
  
 Example Imaris datasets demonstrating the full pipeline are available from Figshare:
  
-> Cho E. *Example Images — Imaris XTension Suite: Cochlear Implant Analysis.* Figshare. https://doi.org/10.26188/31894942
+> Cho E, Trang EP. *Example Images — Imaris XTension Suite: Cochlear Implant Analysis.* Figshare. https://doi.org/10.26188/31894942
  
-Two files are provided: an unprocessed dataset (fluorescence channels and manually segmented surfaces) and a processed dataset with all pipeline outputs included. See [`Example_Images_Description.md`](Image/Example_Images_Description.md) for full details of the contents of each file.
+Two files are provided: an unprocessed dataset (fluorescence channels and manually segmented surfaces) and a processed dataset with all pipeline outputs included. See [`Example_Images_Description.md`](Images/Example_Images_Description.md) for full details of the contents of each file.
  
 <br>
 
@@ -131,7 +131,9 @@ Detailed step-by-step instructions for each script, including all user dialog op
 | `CreateSurfacesFromLabeledMap_User_Guide.md` | User guide: CreateSurfacesFromLabeledMap |
 | `CSV Examples/` | Example CSV files for SpotsToCylinders per-spot parameter mode |
 | `Images/` | Example images and screenshots for user guides |
+| `Images/Example_Images_Description.md` | Description of the example Imaris datasets (Figshare) |
 | `LICENSE` | CC BY 4.0 licence |
+| `CITATION.cff` | Machine-readable citation metadata |
 
 
 ---
